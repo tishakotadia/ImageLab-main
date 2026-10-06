@@ -1,0 +1,172 @@
+# Loading images
+
+load res/bird.jpg bird
+load res/panda.png panda
+load res/panda_mask.png panda_mask
+load res/bird_mask.png bird_mask  
+
+
+# Red, Green, Blue, Value, Intensity, Luma component of all images
+
+red-component bird bird-red
+red-component panda bird-reds split 30 
+red-component bird bird_mask bird-redm 
+
+green-component bird bird-green
+green-component panda bird-greens split 70
+green-component bird bird_mask bird-greenm
+
+blue-component bird bird-blue
+blue-component panda bird-blues split 10
+blue-component bird bird_mask bird-bluem
+
+value-component bird bird-value
+value-component panda bird-values split 25
+value-component bird bird_mask bird-valuem
+
+intensity-component bird bird-intensity
+intensity-component panda bird-intensitys split 23
+intensity-component bird bird_mask bird-intensitym
+
+
+luma-component bird bird-luma
+luma-component bird bird-lumas split 49
+luma-component bird bird_mask bird-lumam
+
+
+save res/bird-red.jpeg bird-red
+save res/bird-green.jpeg bird-green
+save res/bird-blue.jpeg bird-blue
+save res/bird-value.jpeg bird-value
+save res/bird-intensity.jpeg bird-intensity
+save res/bird-luma.jpeg bird-luma
+
+save res/panda-redsplit.jpeg bird-reds
+save res/panda-greensplit.jpeg bird-greens
+save res/panda-bluesplit.jpeg bird-blues
+save res/panda-valuesplit.jpeg bird-values
+save res/panda-intensitysplit.jpeg bird-intensitys
+save res/panda-lumasplit.jpeg bird-lumas
+
+save res/bird-red-mask.jpeg bird-redm
+save res/bird-green-mask.jpeg bird-greenm
+save res/bird-blue-mask.jpeg bird-bluem
+save res/bird-value-mask.jpeg bird-valuem
+save res/bird-intensity-mask.jpeg bird-intensitym
+save res/bird-luma-mask.jpeg bird-lumam
+
+
+
+# Horizontal Flip
+
+horizontal-flip bird bird-hor
+horizontal-flip panda panda-hor
+
+save res/bird-hor.jpeg bird-hor
+save res/panda-hor.jpeg panda-hor
+
+# Vertical-flip
+
+vertical-flip bird bird-ver
+vertical-flip panda panda-ver
+
+save res/bird-ver.jpeg bird-ver
+save res/panda-ver.jpeg panda-ver
+
+
+
+# Brighten
+
+
+brighten 100 bird bird-bright-100
+
+save res/bird-bright-100.jpeg bird-bright-100
+
+
+# Darken
+
+
+brighten -100 bird bird-dark-100
+
+save res/bird-dark-100.jpeg bird-dark-100
+
+
+# RGB split
+
+rgb-split bird bird-rs bird-gs bird-bs
+
+
+save res/bird-redsplit.jpeg bird-rs
+save res/bird-greensplit.jpeg bird-gs
+save res/bird-bluesplit.jpeg bird-bs
+
+# RGB combine
+
+
+rgb-combine birdcom bird-rs bird-gs bird-bs
+
+save res/bird-combine.jpeg birdcom
+
+
+
+# Blur
+
+blur 	bird 	bird-blur
+blur 	bird 	bird-blurs split 30
+blur bird bird_mask bird-blurm 
+save res/bird-blur.jpeg bird-blur
+save res/bird-blursplit.jpeg bird-blurs
+save res/bird-blurmask.jpeg bird-blurm 
+
+
+# Sharpen
+
+
+sharpen bird bird-sharpen
+sharpen bird bird-sharpens split 50
+sharpen bird bird_mask bird-sharpenm
+
+save res/bird-sharpen.jpeg bird-sharpen
+save res/bird-sharpsplit.jpeg bird-sharpens
+save res/bird-sharpen-mask.jpeg bird-sharpenm 
+
+
+# Sepia
+
+sepia bird bird-sepia
+sepia bird bird-sepias split 20
+sepia bird bird_mask bird-sepiam
+save res/bird-sepia.jpeg bird-sepia
+save res/bird-sepiasplit.jpeg bird-sepias
+save res/bird-sepia-mask.jpeg bird-sepiam
+
+# Compression
+
+compress 30 panda pandacomp
+save res/panda-compress.jpeg pandacomp
+compress 70 bird birdcompress
+save res/bird-compress.jpeg birdcompress
+
+#Histogram
+
+histogram panda panda-hist
+save res/panda-hist.jpeg panda-hist
+
+
+# Levels-adjust
+levels-adjust 10 200 250 panda panda-levels
+levels-adjust 130 200 255 bird bird-levels
+levels-adjust 10 200 250 panda panda-levelsp split 45
+save res/panda-levels-adjust.jpeg panda-levels
+save res/bird-levles-adjust.jpeg bird-levels
+save res/panda-levels-adjust-split.jpeg panda-levelsp
+
+# color correct
+color-correct panda panda-color
+color-correct panda panda-colors split 30
+color-correct bird bird-color
+save res/bird-color.jpeg bird-color
+save res/panda-color.jpeg panda-color
+save res/panda-color-split.jpeg panda-colors
+
+

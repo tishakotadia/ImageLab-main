@@ -1,0 +1,74 @@
+# Loading Multiple images in all format jpeg,ppm and png
+
+load images/manhattan-small.png bird
+load images/manhattan_mask.png bird_mask 
+
+
+# Red, Green, Blue, Value, Intensity, Luma component of all images
+
+red-component bird 
+
+green-component bird bird-green
+green-component bird bird_mask bird-green-mask 
+
+blue-component bird bird-blue
+blue-component bird bird_mask bird-blue-mask
+
+red-component bird bird-red split
+
+blue-component bird bird-blue spl 34
+
+green-component bird bird-split -34
+
+
+# Horizontal Flip
+
+horizontal-flip bird bird-hor
+
+save test/controller/resultTest/bird-hor.ppm
+
+
+# Vertical-flip
+
+vertical-flip bird bird-ver
+
+
+save test/controller/resultTest/bird-ver.ppm bird-ver
+
+
+
+# Brighten
+
+
+brighten 100 bird bird-bright-100
+
+save test/controller/resultTest/bird-bright-100.ppm bird-bright-100
+
+# Darken
+
+
+brighten name bird bird-dark-100
+
+save test/controller/resultTest/bird-dark-100.ppm bird-dark-100
+
+# RGB combine
+
+rgb-combine birdcom bird-rs bird-gs bird-bs
+
+save test/controller/resultTest/bird-combine.ppm birdcom
+
+
+# Compress
+compress 35 bird birdcomp
+
+
+# Histogram
+histogram bird
+
+#Levels-adjust
+levels-adjust 10 34 200 bird bird-level
+levels-adjust 10 34 200 bird bird-level spt 30
+
+#Color-Correct
+color-correct bird bird-correct
+color-correct bird bird-correct2 split 180

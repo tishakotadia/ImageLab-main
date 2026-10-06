@@ -1,0 +1,173 @@
+# Loading Multiple images in all format jpeg and png
+
+
+load images/panda.png panda
+
+load images/bird.jpg bird
+
+load images/bird_mask.png bird_mask
+
+load images/panda_mask.png panda_mask  
+
+
+# Red, Green, Blue, Value, Intensity, Luma component of all images
+
+
+red-component panda panda-red
+red-component bird bird-red
+red-component bird bird-split split 50
+red-component panda panda_mask panda-red-mask 
+
+green-component bird bird-green
+green-component panda panda-green
+green-component panda panda-split split 60
+green-component panda panda_mask panda-green-mask
+
+blue-component bird bird-blue
+blue-component panda panda-blue
+blue-component panda panda_mask panda-blue-mask
+
+value-component bird bird-value
+value-component panda panda-value
+value-component panda panda_mask panda-value-mask
+
+intensity-component bird bird-intensity
+intensity-component panda panda-intensity
+intensity-component bird bird-split split 10
+intensity-component panda panda_mask panda-intensity-mask
+
+luma-component bird bird-luma
+luma-component panda panda-luma
+luma-component panda panda-split split 15.6
+luma-component panda panda_mask panda-luma-mask
+
+
+
+# Horizontal Flip
+
+horizontal-flip panda panda-hor
+horizontal-flip bird bird-hor
+
+save  test/controller/resultTest/panda-hor.jpeg panda-hor
+save  test/controller/resultTest/bird-hor.png bird-hor
+
+
+# Vertical-flip
+
+vertical-flip panda panda-ver
+vertical-flip bird bird-ver
+
+save  test/controller/resultTest/panda-ver.jpeg panda-ver
+save  test/controller/resultTest/bird-ver.png bird-ver
+
+
+
+# Brighten
+
+
+brighten 100 panda panda-bright-100
+brighten 100 bird bird-bright-100
+
+save test/controller/resultTest/panda-bright-100.jpeg panda-bright-100
+save  test/controller/resultTest/bird-bright-100.png bird-bright-100
+
+# Darken
+
+brighten -100 panda panda-dark-100
+brighten -100 bird bird-dark-100
+
+save  test/controller/resultTest/panda-dark-100.jpeg panda-dark-100
+save  test/controller/resultTest/bird-dark-100.png bird-dark-100
+
+# RGB split
+
+rgb-split panda panda-rs panda-gs panda-bs
+rgb-split bird bird-rs bird-gs bird-bs
+
+save  test/controller/resultTest/panda-redsplit.jpeg panda-rs
+save  test/controller/resultTest/panda-greensplit.jpeg panda-gs
+save  test/controller/resultTest/panda-bluesplit.jpeg panda-bs
+
+save test/controller/resultTest/bird-redsplit.png bird-rs
+save  test/controller/resultTest/bird-greensplit.png bird-gs
+save  test/controller/resultTest/bird-bluesplit.png bird-bs
+
+# RGB combine
+
+
+rgb-combine pandacom panda-rs panda-gs panda-bs
+rgb-combine birdcom bird-rs bird-gs bird-bs
+
+save  test/controller/resultTest/bird-combine.png birdcom
+save  test/controller/resultTest/panda-combine.jpeg pandacom
+
+
+# Blur
+
+blur panda panda-blur
+blur bird bird-blur
+blur bird bird-split split 50
+blur bird bird_mask bird-mask-blur 
+save test/controller/resultTest/bird-split.jpg bird-split
+save  test/controller/resultTest/panda-blur.jpeg panda-blur
+
+save  test/controller/resultTest/bird-blur.png bird-blur
+
+# Sharpen
+
+
+sharpen panda panda-sharpen
+sharpen bird bird-sharpen
+sharpen panda panda-split split 60
+Sharpen bird bird_mask bird-mask-sharpen
+save  test/controller/resultTest/panda-sharpen.jpeg panda-sharpen
+
+save test/controller/resultTest/bird-sharpen.png bird-sharpen
+
+save test/controller/resultTest/panda-sharpen-split.jpg panda-split
+
+# Performing operation on already existing image
+
+blur panda-sharpen panda-sharpen-blur
+blur bird-sharpen bird-sharpen-blur
+blur bird bird-split split 50
+
+save test/controller/resultTest/panda-sharpen-blur.jpeg panda-sharpen-blur
+
+save test/controller/resultTest/bird-sharpen-blur.ppm bird-sharpen-blur
+
+
+# Sepia
+
+sepia panda panda-sepia
+sepia bird bird-sepia
+Sepia bird bird_mask bird-mask-sepia
+
+save  test/controller/resultTest/panda-sepia.jpeg panda-sepia
+
+save  test/controller/resultTest/bird-sepia.png bird-sepia
+
+# Overloading an existing image
+
+sharpen bird panda-sepia
+
+save test/controller/resultTest/panda-sepia.png panda-sepia
+
+# Compress
+compress 35 bird birdcomp
+compress 45 panda pandacomp
+
+# Histogram
+histogram bird bird-hist
+histogram panda panda-hist
+
+
+#Levels-adjust
+levels-adjust 10 34 200 bird bird-level
+levels-adjust 10 34 200 bird bird-level split 30
+levels-adjust 10 56 255 panda panda-level split 45
+
+#Color-Correct
+color-correct bird bird-correct
+color-correct panda panda-correct split 23
+color-correct bird bird-correct2 split 50

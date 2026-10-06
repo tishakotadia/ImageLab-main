@@ -1,0 +1,21 @@
+# Loading Multiple images in all format jpeg,ppm and png
+
+load images/koala.ppm koala
+load images/bird.jpg bird
+load images/panda.png panda
+
+brighten 100 koala koalabri
+brighten 100 bird birdbri
+brighten 100 panda pandabri
+
+save test/controller/resultTest/koala.png koalabri
+save test/controller/resultTest/koala.jpeg koalabri
+save test/controller/resultTest/koala.jpg koalabri
+
+save test/controller/resultTest/bird.ppm birdbri
+save test/controller/resultTest/koala.png birdbri
+save test/controller/resultTest/koala.jpg birdbri
+
+save test/controller/resultTest/panda.ppm pandabri
+save test/controller/resultTest/panda.jpeg pandabri
+save test/controller/resultTest/panda.jpg pandabri

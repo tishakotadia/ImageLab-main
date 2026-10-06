@@ -1,0 +1,132 @@
+# Loading Multiple images in all format jpeg,ppm and png
+
+load images/koala.ppm 
+load koala.ppm kaola
+load images/koala.gfg koala  
+load images/koala.ppm koala
+# Red, Green, Blue, Value, Intensity, Luma component of all images
+
+red-component bird
+red-component bird bird-red
+red-component bird bird-red split
+
+green-component bird
+green-component bird bird-green
+green-component bird bird-red split twenty
+
+blue-component bird 
+blue-component bird bird-green
+blue-component bird bird-red sp 45
+
+value-component bird
+value-component bird bird-green
+
+intensity-component bird 
+intensity-component bird bird-green
+
+luma-component bird
+luma-component bird bird-luma
+
+
+# Horizontal Flip
+
+horizontal-flip bird
+horizontal-flip bird bird
+
+
+# Vertical-flip
+
+vertical-flip bird
+vertical-flip bird bird-ver
+
+
+# Brighten
+
+brighten 100 bird
+brighten -100 bird birdhgn
+brighten adbf bird bird-bright-100
+brighten 100 bird birdbright
+brighten 100.45 bird birgdn
+
+# RGB split
+
+rgb-split bird birdr
+rgb-split bird red green blue
+
+
+# RGB combine
+
+rgb-combine birdcomeb man manbg
+rgb-combine birdcom bird-rs bird-gs bird-bs
+
+
+# Blur
+
+blur 		bird 
+blur bird max
+blur bird bird-red split -45
+
+# Sharpen
+
+sharpen bird
+sharpen bird bird-sharpen
+
+
+
+# Sepia
+sepia bird 
+sepia bird bird-sepia
+sepia bird bird-red split 145
+
+save test/controller/resultTest/koala.ppm 
+save test/controller/img/koala.ppm koala
+save test/controller/resultTest/koala.gfg koala
+
+
+flipvertical img ims1
+sharp img1 img2
+
+
+# Compress
+compress -100 bird birdcomp
+compress hundered bird birdcomp
+
+#histogram
+histogram man man-20
+
+#levels-adjust
+levels-adjust 34 67 24 man man-level
+levels-adjust 23 67 hundred man man-level
+levels-adjust 290 300 345 man man-level
+levels-adjust -100 -150 -190 man man-level
+
+#color-correct
+colorcorrect man man-color
+color-correct koala koala-color split -90  
+
+#masking -  mask not loaded
+blur koala mask man
+sharpen koala mask man
+sepia koala mask man
+red-component koala mask man
+blue-component koala mask man
+green-component koala mask man
+intensity-component koala mask man
+value-component koala mask man
+luma-component koala mask man
+
+load images/mask.jpg mask
+
+#masking - dimension different
+
+blur koala mask man
+sharpen koala mask man
+sepia koala mask man
+red-component koala mask man
+blue-component koala mask man
+green-component koala mask man
+intensity-component koala mask man
+value-component koala mask man
+luma-component koala mask man
+
+

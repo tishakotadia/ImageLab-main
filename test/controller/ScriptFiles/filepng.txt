@@ -1,0 +1,125 @@
+# Loading Multiple images in all format jpeg,ppm and png
+
+load images/panda.png bird
+load images/panda_mask.png bird_mask 
+
+
+# Red, Green, Blue, Value, Intensity, Luma component of all images
+
+red-component bird bird-red
+red-component bird bird-split split 50
+red-component bird bird_mask bird-red-mask
+
+green-component bird bird-green
+green-component bird bird-split split 60
+green-component bird bird_mask bird-green-mask
+
+blue-component bird bird-blue
+blue-component bird bird-split split 70
+blue-component bird bird_mask bird-blue-mask
+
+value-component bird bird-value
+value-component bird bird-split split 30
+value-component bird bird_mask bird-value-mask
+
+intensity-component bird bird-intensity
+intensity-component bird bird-split split 10
+intensity-component bird bird_mask bird-intensity-mask
+
+luma-component bird bird-luma
+luma-component bird bird-split split 15.6
+luma-component bird bird_mask bird-luma-mask
+
+
+# Horizontal Flip
+
+horizontal-flip bird bird-hor
+
+save test/controller/resultTest/bird-hor.jpg bird-hor
+
+
+# Vertical-flip
+
+vertical-flip bird bird-ver
+
+
+save test/controller/resultTest/bird-ver.jpg bird-ver
+
+
+
+# Brighten
+
+
+brighten 100 bird bird-bright-100
+
+save test/controller/resultTest/bird-brighten.jpg bird-bright-100
+
+
+# Darken
+
+
+brighten -100 bird bird-dark-100
+
+save test/controller/resultTest/bird-dark-100.png bird-dark-100
+
+# RGB split
+
+rgb-split bird bird-rs bird-gs bird-bs
+
+save test/controller/resultTest/bird-redsplit.png bird-rs
+save test/controller/resultTest/bird-greensplit.png bird-gs
+save test/controller/resultTest/bird-bluesplit.png bird-bs
+
+# RGB combine
+
+rgb-combine birdcom bird-rs bird-gs bird-bs
+
+save test/controller/resultTest/bird-combine.png birdcom
+
+
+
+# Blur
+
+blur 		bird bird-blur
+save test/controller/resultTest/bird-blur.jpg bird-blur
+blur bird bird-split split 50
+save test/controller/resultTest/bird-split.jpg bird-split
+blur bird bird_mask bird-blur-mask
+save test/controller/resultTest/bird-blur-mask.jpg bird-blur-mask 
+
+# Sharpen
+
+sharpen bird bird-sharpen
+
+save test/controller/resultTest/bird-sharpen.png bird-sharpen
+sharpen bird bird-split split 60
+save test/controller/resultTest/bird-split.jpg bird-split
+sharpen bird bird_mask bird-sharpen-mask
+save test/controller/resultTest/bird-sharpen-mask.jpg bird-sharpen-mask  
+
+
+# Sepia
+sepia bird bird-sepia
+sepia bird bird-sepia split 45.8
+save test/controller/resultTest/bird-sepia.jpg bird-sepia
+sepia bird bird_mask bird-sepia-mask
+save test/controller/resultTest/bird-sepia-mask.jpg bird-sepia-mask   
+
+# Compress
+compress 35 bird birdcomp
+save test/controller/resultTest/bird-comp.jpg birdcomp
+
+# Histogram
+histogram bird bird-hist
+save test/controller/resultTest/bird-hist.png bird-hist
+
+#Levels-adjust
+levels-adjust 10 34 200 bird bird-level
+save test/controller/resultTest/bird-level.png bird-level
+levels-adjust 10 34 200 bird bird-level split 30
+
+#Color-Correct
+color-correct bird bird-correct
+save test/controller/resultTest/bird-correct.png bird-correct
+color-correct bird bird-correct2 split 50
+

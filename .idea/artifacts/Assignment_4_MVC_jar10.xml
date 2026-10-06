@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Assignment-4-MVC:jar10">
+    <output-path>$PROJECT_DIR$/out/artifacts/Assignment_4_MVC_jar10</output-path>
+    <root id="archive" name="Assignment-4-MVC.jar">
+      <element id="module-output" name="ImageName" />
+    </root>
+  </artifact>
+</component>
